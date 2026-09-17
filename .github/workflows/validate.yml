@@ -1,0 +1,34 @@
+# Validates the Ever platform catalog: schema, unique ids, icon size, https-only, ≤ 24 entries.
+
+name: validate
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+concurrency:
+    group: validate-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    catalog:
+        name: platforms.json + icons
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+
+            - name: Install
+              run: npm install --no-audit --no-fund
+
+            - name: Validate the catalog
+              run: npm run validate

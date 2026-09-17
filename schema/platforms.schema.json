@@ -1,0 +1,75 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://github.com/ever-works/platforms/schema/platforms.schema.json",
+	"title": "Ever platform catalog",
+	"description": "The index Ever Works reads to render the Ever apps in its App Launcher. Addresses are data in this repository; none appear in platform code.",
+	"type": "object",
+	"required": ["schemaVersion", "catalogVersion", "platforms"],
+	"additionalProperties": false,
+	"properties": {
+		"schemaVersion": {
+			"const": 1
+		},
+		"catalogVersion": {
+			"type": "string",
+			"pattern": "^\\d+\\.\\d+\\.\\d+$"
+		},
+		"platforms": {
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 24,
+			"description": "At most 24 entries; ids are unique across the array.",
+			"items": {
+				"type": "object",
+				"required": ["id", "name", "description", "icon", "order", "status", "urls"],
+				"additionalProperties": false,
+				"properties": {
+					"id": {
+						"type": "string",
+						"pattern": "^[a-z0-9-]{2,40}$",
+						"description": "Also the key the App Launcher stores a per-person preference under, as `platform:<id>`."
+					},
+					"name": {
+						"type": "string",
+						"minLength": 1,
+						"maxLength": 40
+					},
+					"description": {
+						"type": "string",
+						"minLength": 1,
+						"maxLength": 80
+					},
+					"icon": {
+						"type": "string",
+						"pattern": "^icons/[a-z0-9-]+\\.(svg|png)$"
+					},
+					"order": {
+						"type": "integer",
+						"minimum": 0,
+						"maximum": 9999
+					},
+					"status": {
+						"enum": ["available", "beta"]
+					},
+					"urls": {
+						"type": "object",
+						"required": ["production", "stage", "develop"],
+						"additionalProperties": false,
+						"description": "One address per environment. The environment Ever Works reads is chosen by EVER_WORKS_PLATFORM_CATALOG_ENV (default `production`) at read time; all three are required so a missing environment is a visible error rather than a silent absence.",
+						"properties": {
+							"production": { "$ref": "#/$defs/address" },
+							"stage": { "$ref": "#/$defs/address" },
+							"develop": { "$ref": "#/$defs/address" }
+						}
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"address": {
+			"description": "An absolute https address. `TBD` is accepted ONLY as the explicit marker for an owner-supplied address that has not been provided yet: the validator reports it as a warning, never as an error, and anything else that is not an https address is an error.",
+			"anyOf": [{ "const": "TBD" }, { "type": "string", "pattern": "^https://\\S+$" }]
+		}
+	}
+}

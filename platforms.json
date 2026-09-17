@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"catalogVersion": "0.1.0",
+	"platforms": [
+		{
+			"id": "ever-works",
+			"name": "Ever Works",
+			"description": "TBD",
+			"icon": "icons/ever-works.svg",
+			"order": 10,
+			"status": "available",
+			"urls": {
+				"production": "TBD",
+				"stage": "TBD",
+				"develop": "TBD"
+			}
+		},
+		{
+			"id": "ever-gauzy",
+			"name": "Ever Gauzy",
+			"description": "Work and time management for teams.",
+			"icon": "icons/ever-gauzy.svg",
+			"order": 20,
+			"status": "available",
+			"urls": {
+				"production": "TBD",
+				"stage": "TBD",
+				"develop": "TBD"
+			}
+		},
+		{
+			"id": "ever-teams",
+			"name": "Ever Teams",
+			"description": "TBD",
+			"icon": "icons/ever-teams.svg",
+			"order": 30,
+			"status": "beta",
+			"urls": {
+				"production": "TBD",
+				"stage": "TBD",
+				"develop": "TBD"
+			}
+		}
+	]
+}
