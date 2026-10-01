@@ -49,7 +49,8 @@
 						"maximum": 9999
 					},
 					"status": {
-						"enum": ["available", "beta"]
+						"enum": ["available", "beta", "soon"],
+						"description": "`soon` lists a platform that is announced but not open yet: the App Launcher shows it with a Soon chip and never as a link."
 					},
 					"urls": {
 						"type": "object",
