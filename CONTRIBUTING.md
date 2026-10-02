@@ -10,13 +10,15 @@ points, so a change here is visible to every person using the launcher.
 2. **Use the real https address for every environment.** All three of `production`, `stage` and `develop`
    are required. If you do not have an address yet, write `TBD` — the validator will warn rather than fail,
    and the warning is the honest record that the value is still missing. Do not invent one.
-3. **Keep the fields inside their limits:** `name` ≤ 40 characters, `description` ≤ 80, `order` 0..9999,
+3. **Pick the status:** `available`, `beta`, or `soon` for a platform that is announced but not open yet
+   (the launcher shows a Soon chip and never links it).
+4. **Keep the fields inside their limits:** `name` ≤ 40 characters, `description` ≤ 80, `order` 0..9999,
    `id` matching `^[a-z0-9-]{2,40}$`. The id is also the key a person's App Launcher preference is stored
    under (`platform:<id>`), so **changing an id loses every stored preference** — add a new entry and
    deprecate the old one instead.
-4. **At most 24 entries.** Every additional platform is a per-entry decision with a named owner, not a
+5. **At most 24 entries.** Every additional platform is a per-entry decision with a named owner, not a
    batch one.
-5. **Icons are ≤ 16 KiB**, `icons/<id>.svg` or `icons/<id>.png`. An SVG must contain no `<script>`, no
+6. **Icons are ≤ 16 KiB**, `icons/<id>.svg` or `icons/<id>.png`. An SVG must contain no `<script>`, no
    `on<event>=`, no `javascript:` and no `<foreignObject>`.
 
 ## What CI checks
@@ -33,7 +35,7 @@ npm run validate
 ## Rules that are not negotiable
 
 - **Never remove an entry to fix a problem.** Removing a platform removes it from everyone's launcher.
-  Correct the entry, or set it to `beta`, and say why in the pull request.
+  Correct the entry, or set it to `beta` (or `soon`), and say why in the pull request.
 - **No secrets and no credentials** — this repository holds addresses and names only.
 - **No addresses other than `https`.** The launcher will not open anything else, and the schema rejects it.
 - **Addresses belong here, not in platform code.** If you find yourself wanting to hardcode a URL in Ever

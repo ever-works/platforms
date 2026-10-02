@@ -8,10 +8,10 @@ in.
 `platforms.json` from the raw host and then each referenced icon, so a change here is a change to every
 launcher without a deploy.
 
-> **Status: seed.** The three entries exist and validate, but **every address is still `TBD`**: they are
-> owner-supplied and have not been provided yet. The validator reports each `TBD` as a warning, never as an
-> error — inventing an address would be worse than saying plainly that it is missing. The icons are
-> deliberate placeholders, not brand marks. See **Placeholders** below.
+> **Status:** seven entries, each with its product's real public address and official icon. Ever Demand is
+> listed as `soon`: the launcher shows it with a **Soon** chip and never as a link. One address is still `TBD`
+> (Ever Traduora has no public develop environment yet); the validator reports it as a warning, never as an
+> error, and the launcher simply does not show that entry in develop. See **Placeholders** below.
 
 ---
 
@@ -51,7 +51,7 @@ reason and the rest of the catalog still renders. A failed refresh serves the la
 			"description": "…",              // ≤ 80 characters
 			"icon": "icons/ever-gauzy.svg",  // ^icons/[a-z0-9-]+\.(svg|png)$ · ≤ 16 KiB
 			"order": 20,                     // 0..9999
-			"status": "available",           // "available" | "beta"
+			"status": "available",           // "available" | "beta" | "soon"
 			"urls": { "production": "…", "stage": "…", "develop": "…" }  // one https address per environment
 		}
 	]
@@ -61,26 +61,43 @@ reason and the rest of the catalog still renders. A failed refresh serves the la
 At most **24** entries, and ids are unique. All three environments are **required** for every entry, so a
 missing environment is a visible error here rather than a silently absent tile.
 
+`status` is one of:
+
+| Status | The App Launcher shows |
+| --- | --- |
+| `available` | the tile, linking to the address for its environment |
+| `beta` | the tile with a **Beta** chip, linking to the address for its environment |
+| `soon` | the tile with a **Soon** chip; it is never a link and cannot be opened |
+
 ## The entries
 
-| Order | Id | Name | Status | Description | Grounded in |
-| --- | --- | --- | --- | --- | --- |
-| 10 | `ever-works` | Ever Works | `available` | `TBD` | the mock marks it "You're here" (`EVER_WORKS_PLATFORM_CATALOG_SELF_ID` default `ever-works`) |
-| 20 | `ever-gauzy` | Ever Gauzy | `available` | Work and time management for teams. | the catalog example in the plan |
-| 30 | `ever-teams` | Ever Teams | `beta` | `TBD` | the launcher mock shows Ever Teams badged **Beta** |
+| Order | Id | Name | Status | Description | Production | Stage | Develop |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 10 | `ever-works` | Ever Works | `available` | Build, run and evolve apps with agents. | https://app.ever.works | https://app-stage.ever.works | https://app-dev.ever.works |
+| 20 | `ever-gauzy` | Ever Gauzy | `available` | Work and time management for teams. | https://app.gauzy.co | https://stage.gauzy.co | https://demo.gauzy.co |
+| 30 | `ever-teams` | Ever Teams | `beta` | Plan, track and ship together. | https://app.ever.team | https://stage.ever.team | https://demo.ever.team |
+| 40 | `ever-rec` | Ever Rec | `available` | Screen capture, recording and sharing. | https://rec.so | https://website-stage.rec.so | https://website-dev.rec.so |
+| 50 | `ever-traduora` | Ever Traduora | `available` | Translation management for teams. | https://traduora.co | https://website-stage.traduora.co | `TBD` |
+| 60 | `ever-demand` | Ever Demand | `soon` | Open platform for on-demand and sharing economies. | https://everdemand.co | https://website-stage.everdemand.co | https://website-dev.everdemand.co |
+| 70 | `app-ever-co` | Ever Platform | `available` | Your Ever account, organizations and security settings. | https://app.ever.co | https://app-stage.ever.co | https://app-dev.ever.co |
 
-These are **the first three and no others**; every additional entry is a per-entry decision with a named
-owner, not a batch one.
+Each address is the product's current public address for that environment: the web app where a product has
+one, otherwise its website. Every additional entry is a per-entry decision with a named owner, not a batch
+one.
+
+## Icons
+
+Each icon is the product's official icon as its own site serves it (`favicon.svg`), and Ever Traduora's is the
+logo of its documentation site (`icons/ever-traduora.png`, 400 × 400). Ever Works and Ever Teams currently
+share one site icon, so their tiles look alike until either product publishes its own mark; the names tell
+them apart.
 
 ## Placeholders — replace these
 
-This repository is a seed, and three things in it are knowingly incomplete. All three are marked `TBD` or
-`PLACEHOLDER` rather than guessed:
+One value is knowingly incomplete and marked `TBD` rather than guessed:
 
-1. **Every address** (`urls.production`, `urls.stage`, `urls.develop`) for all three entries.
-2. **The description** for `ever-works` and `ever-teams`.
-3. **The icons** — `icons/*.svg` are neutral monograms, not brand marks. Each carries a `<desc>` saying so.
-   Replace them with the official assets; the file names are already the ones the entries reference.
+1. **`ever-traduora` → `urls.develop`**: Ever Traduora has no public develop environment yet. Until it has one,
+   the launcher does not show Ever Traduora in develop.
 
 ## Validating locally
 

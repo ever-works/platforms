@@ -1,18 +1,18 @@
 {
 	"schemaVersion": 1,
-	"catalogVersion": "0.1.0",
+	"catalogVersion": "0.2.0",
 	"platforms": [
 		{
 			"id": "ever-works",
 			"name": "Ever Works",
-			"description": "TBD",
+			"description": "Build, run and evolve apps with agents.",
 			"icon": "icons/ever-works.svg",
 			"order": 10,
 			"status": "available",
 			"urls": {
-				"production": "TBD",
-				"stage": "TBD",
-				"develop": "TBD"
+				"production": "https://app.ever.works",
+				"stage": "https://app-stage.ever.works",
+				"develop": "https://app-dev.ever.works"
 			}
 		},
 		{
@@ -23,22 +23,74 @@
 			"order": 20,
 			"status": "available",
 			"urls": {
-				"production": "TBD",
-				"stage": "TBD",
-				"develop": "TBD"
+				"production": "https://app.gauzy.co",
+				"stage": "https://stage.gauzy.co",
+				"develop": "https://demo.gauzy.co"
 			}
 		},
 		{
 			"id": "ever-teams",
 			"name": "Ever Teams",
-			"description": "TBD",
+			"description": "Plan, track and ship together.",
 			"icon": "icons/ever-teams.svg",
 			"order": 30,
 			"status": "beta",
 			"urls": {
-				"production": "TBD",
-				"stage": "TBD",
+				"production": "https://app.ever.team",
+				"stage": "https://stage.ever.team",
+				"develop": "https://demo.ever.team"
+			}
+		},
+		{
+			"id": "ever-rec",
+			"name": "Ever Rec",
+			"description": "Screen capture, recording and sharing.",
+			"icon": "icons/ever-rec.svg",
+			"order": 40,
+			"status": "available",
+			"urls": {
+				"production": "https://rec.so",
+				"stage": "https://website-stage.rec.so",
+				"develop": "https://website-dev.rec.so"
+			}
+		},
+		{
+			"id": "ever-traduora",
+			"name": "Ever Traduora",
+			"description": "Translation management for teams.",
+			"icon": "icons/ever-traduora.png",
+			"order": 50,
+			"status": "available",
+			"urls": {
+				"production": "https://traduora.co",
+				"stage": "https://website-stage.traduora.co",
 				"develop": "TBD"
+			}
+		},
+		{
+			"id": "ever-demand",
+			"name": "Ever Demand",
+			"description": "Open platform for on-demand and sharing economies.",
+			"icon": "icons/ever-demand.svg",
+			"order": 60,
+			"status": "soon",
+			"urls": {
+				"production": "https://everdemand.co",
+				"stage": "https://website-stage.everdemand.co",
+				"develop": "https://website-dev.everdemand.co"
+			}
+		},
+		{
+			"id": "app-ever-co",
+			"name": "Ever Platform",
+			"description": "Your Ever account, organizations and security settings.",
+			"icon": "icons/app-ever-co.svg",
+			"order": 70,
+			"status": "available",
+			"urls": {
+				"production": "https://app.ever.co",
+				"stage": "https://app-stage.ever.co",
+				"develop": "https://app-dev.ever.co"
 			}
 		}
 	]
