@@ -1,31 +1,31 @@
 {
 	"schemaVersion": 1,
-	"catalogVersion": "0.2.0",
+	"catalogVersion": "0.3.0",
 	"platforms": [
+		{
+			"id": "app-ever-co",
+			"name": "Ever Platform",
+			"description": "Your Ever account, organizations and security settings.",
+			"icon": "icons/app-ever-co.svg",
+			"order": 10,
+			"status": "available",
+			"urls": {
+				"production": "https://app.ever.co",
+				"stage": "https://app-stage.ever.co",
+				"develop": "https://app-dev.ever.co"
+			}
+		},
 		{
 			"id": "ever-works",
 			"name": "Ever Works",
 			"description": "Build, run and evolve apps with agents.",
 			"icon": "icons/ever-works.svg",
-			"order": 10,
+			"order": 20,
 			"status": "available",
 			"urls": {
 				"production": "https://app.ever.works",
 				"stage": "https://app-stage.ever.works",
 				"develop": "https://app-dev.ever.works"
-			}
-		},
-		{
-			"id": "ever-gauzy",
-			"name": "Ever Gauzy",
-			"description": "Work and time management for teams.",
-			"icon": "icons/ever-gauzy.svg",
-			"order": 20,
-			"status": "available",
-			"urls": {
-				"production": "https://app.gauzy.co",
-				"stage": "https://stage.gauzy.co",
-				"develop": "https://demo.gauzy.co"
 			}
 		},
 		{
@@ -42,11 +42,24 @@
 			}
 		},
 		{
+			"id": "ever-gauzy",
+			"name": "Ever Gauzy",
+			"description": "Work and time management for teams.",
+			"icon": "icons/ever-gauzy.svg",
+			"order": 40,
+			"status": "available",
+			"urls": {
+				"production": "https://app.gauzy.co",
+				"stage": "https://stage.gauzy.co",
+				"develop": "https://demo.gauzy.co"
+			}
+		},
+		{
 			"id": "ever-rec",
 			"name": "Ever Rec",
 			"description": "Screen capture, recording and sharing.",
 			"icon": "icons/ever-rec.svg",
-			"order": 40,
+			"order": 50,
 			"status": "available",
 			"urls": {
 				"production": "https://rec.so",
@@ -59,7 +72,7 @@
 			"name": "Ever Traduora",
 			"description": "Translation management for teams.",
 			"icon": "icons/ever-traduora.png",
-			"order": 50,
+			"order": 60,
 			"status": "available",
 			"urls": {
 				"production": "https://traduora.co",
@@ -72,25 +85,12 @@
 			"name": "Ever Demand",
 			"description": "Open platform for on-demand and sharing economies.",
 			"icon": "icons/ever-demand.svg",
-			"order": 60,
+			"order": 70,
 			"status": "soon",
 			"urls": {
 				"production": "https://everdemand.co",
 				"stage": "https://website-stage.everdemand.co",
 				"develop": "https://website-dev.everdemand.co"
-			}
-		},
-		{
-			"id": "app-ever-co",
-			"name": "Ever Platform",
-			"description": "Your Ever account, organizations and security settings.",
-			"icon": "icons/app-ever-co.svg",
-			"order": 70,
-			"status": "available",
-			"urls": {
-				"production": "https://app.ever.co",
-				"stage": "https://app-stage.ever.co",
-				"develop": "https://app-dev.ever.co"
 			}
 		}
 	]
