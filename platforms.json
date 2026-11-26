@@ -1,13 +1,26 @@
 {
 	"schemaVersion": 1,
-	"catalogVersion": "0.2.0",
+	"catalogVersion": "0.4.0",
 	"platforms": [
+		{
+			"id": "app-ever-co",
+			"name": "Ever Platform",
+			"description": "One account for every Ever app",
+			"icon": "icons/app-ever-co.svg",
+			"order": 10,
+			"status": "available",
+			"urls": {
+				"production": "https://app.ever.co",
+				"stage": "https://app-stage.ever.co",
+				"develop": "https://app-dev.ever.co"
+			}
+		},
 		{
 			"id": "ever-works",
 			"name": "Ever Works",
-			"description": "Build, run and evolve apps with agents.",
+			"description": "AI agents that run your business",
 			"icon": "icons/ever-works.svg",
-			"order": 10,
+			"order": 20,
 			"status": "available",
 			"urls": {
 				"production": "https://app.ever.works",
@@ -16,22 +29,9 @@
 			}
 		},
 		{
-			"id": "ever-gauzy",
-			"name": "Ever Gauzy",
-			"description": "Work and time management for teams.",
-			"icon": "icons/ever-gauzy.svg",
-			"order": 20,
-			"status": "available",
-			"urls": {
-				"production": "https://app.gauzy.co",
-				"stage": "https://stage.gauzy.co",
-				"develop": "https://demo.gauzy.co"
-			}
-		},
-		{
 			"id": "ever-teams",
 			"name": "Ever Teams",
-			"description": "Plan, track and ship together.",
+			"description": "Work and project management",
 			"icon": "icons/ever-teams.svg",
 			"order": 30,
 			"status": "beta",
@@ -42,55 +42,68 @@
 			}
 		},
 		{
-			"id": "ever-rec",
-			"name": "Ever Rec",
-			"description": "Screen capture, recording and sharing.",
-			"icon": "icons/ever-rec.svg",
+			"id": "ever-gauzy",
+			"name": "Ever Gauzy",
+			"description": "ERP, CRM and HR in one app",
+			"icon": "icons/ever-gauzy.svg",
 			"order": 40,
 			"status": "available",
 			"urls": {
-				"production": "https://rec.so",
-				"stage": "https://website-stage.rec.so",
-				"develop": "https://website-dev.rec.so"
+				"production": "https://app.gauzy.co",
+				"stage": "https://stage.gauzy.co",
+				"develop": "https://demo.gauzy.co"
+			}
+		},
+		{
+			"id": "ever-rec",
+			"name": "Ever Rec",
+			"description": "Screen capture and recording",
+			"icon": "icons/ever-rec.svg",
+			"order": 50,
+			"status": "available",
+			"urls": {
+				"production": "https://app.rec.so",
+				"stage": "https://app.rec.so",
+				"develop": "https://app.rec.so"
 			}
 		},
 		{
 			"id": "ever-traduora",
 			"name": "Ever Traduora",
-			"description": "Translation management for teams.",
+			"description": "Translation management for teams",
 			"icon": "icons/ever-traduora.png",
-			"order": 50,
+			"order": 60,
 			"status": "available",
 			"urls": {
-				"production": "https://traduora.co",
-				"stage": "https://website-stage.traduora.co",
-				"develop": "TBD"
+				"production": "https://app.traduora.co",
+				"stage": "https://app.traduora.co",
+				"develop": "https://demo.traduora.co"
 			}
 		},
 		{
 			"id": "ever-demand",
 			"name": "Ever Demand",
-			"description": "Open platform for on-demand and sharing economies.",
+			"description": "Commerce and on-demand marketplaces",
 			"icon": "icons/ever-demand.svg",
-			"order": 60,
+			"order": 70,
 			"status": "soon",
 			"urls": {
-				"production": "https://everdemand.co",
-				"stage": "https://website-stage.everdemand.co",
-				"develop": "https://website-dev.everdemand.co"
+				"production": "https://app.everdemand.co",
+				"stage": "https://app.everdemand.co",
+				"develop": "https://app.everdemand.co"
 			}
 		},
 		{
-			"id": "app-ever-co",
-			"name": "Ever Platform",
-			"description": "Your Ever account, organizations and security settings.",
-			"icon": "icons/app-ever-co.svg",
-			"order": 70,
+			"id": "ever-tech",
+			"name": "Ever Tech",
+			"description": "Engineers and operated agents for hire",
+			"icon": "icons/ever-tech.svg",
+			"order": 80,
 			"status": "available",
 			"urls": {
-				"production": "https://app.ever.co",
-				"stage": "https://app-stage.ever.co",
-				"develop": "https://app-dev.ever.co"
+				"production": "https://ever.tech",
+				"stage": "https://ever.tech",
+				"develop": "https://ever.tech"
 			}
 		}
 	]

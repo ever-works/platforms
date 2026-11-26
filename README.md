@@ -8,10 +8,12 @@ in.
 `platforms.json` from the raw host and then each referenced icon, so a change here is a change to every
 launcher without a deploy.
 
-> **Status:** seven entries, each with its product's real public address and official icon. Ever Demand is
-> listed as `soon`: the launcher shows it with a **Soon** chip and never as a link. One address is still `TBD`
-> (Ever Traduora has no public develop environment yet); the validator reports it as a warning, never as an
-> error, and the launcher simply does not show that entry in develop. See **Placeholders** below.
+> **Status:** eight entries, in the order every Ever app lists them (Ever Platform, Works, Teams, Gauzy, Rec,
+> Traduora, Demand, Tech), each with its one line and official icon. Each address is the product's **app** for
+> that environment, or its production app where that environment has none (in-app switcher brief, owner
+> 2026-11-26). Ever Demand is listed as `soon`: the launcher shows it with a **Soon** chip and never as a link.
+> No address is `TBD`. Three hosts are still being built and do not answer yet; see **Hosts still being
+> built** below.
 
 ---
 
@@ -73,17 +75,20 @@ missing environment is a visible error here rather than a silently absent tile.
 
 | Order | Id | Name | Status | Description | Production | Stage | Develop |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 10 | `ever-works` | Ever Works | `available` | Build, run and evolve apps with agents. | https://app.ever.works | https://app-stage.ever.works | https://app-dev.ever.works |
-| 20 | `ever-gauzy` | Ever Gauzy | `available` | Work and time management for teams. | https://app.gauzy.co | https://stage.gauzy.co | https://demo.gauzy.co |
-| 30 | `ever-teams` | Ever Teams | `beta` | Plan, track and ship together. | https://app.ever.team | https://stage.ever.team | https://demo.ever.team |
-| 40 | `ever-rec` | Ever Rec | `available` | Screen capture, recording and sharing. | https://rec.so | https://website-stage.rec.so | https://website-dev.rec.so |
-| 50 | `ever-traduora` | Ever Traduora | `available` | Translation management for teams. | https://traduora.co | https://website-stage.traduora.co | `TBD` |
-| 60 | `ever-demand` | Ever Demand | `soon` | Open platform for on-demand and sharing economies. | https://everdemand.co | https://website-stage.everdemand.co | https://website-dev.everdemand.co |
-| 70 | `app-ever-co` | Ever Platform | `available` | Your Ever account, organizations and security settings. | https://app.ever.co | https://app-stage.ever.co | https://app-dev.ever.co |
+| 10 | `app-ever-co` | Ever Platform | `available` | One account for every Ever app | https://app.ever.co | https://app-stage.ever.co | https://app-dev.ever.co |
+| 20 | `ever-works` | Ever Works | `available` | AI agents that run your business | https://app.ever.works | https://app-stage.ever.works | https://app-dev.ever.works |
+| 30 | `ever-teams` | Ever Teams | `beta` | Work and project management | https://app.ever.team | https://stage.ever.team | https://demo.ever.team |
+| 40 | `ever-gauzy` | Ever Gauzy | `available` | ERP, CRM and HR in one app | https://app.gauzy.co | https://stage.gauzy.co | https://demo.gauzy.co |
+| 50 | `ever-rec` | Ever Rec | `available` | Screen capture and recording | https://app.rec.so | https://app.rec.so | https://app.rec.so |
+| 60 | `ever-traduora` | Ever Traduora | `available` | Translation management for teams | https://app.traduora.co | https://app.traduora.co | https://demo.traduora.co |
+| 70 | `ever-demand` | Ever Demand | `soon` | Commerce and on-demand marketplaces | https://app.everdemand.co | https://app.everdemand.co | https://app.everdemand.co |
+| 80 | `ever-tech` | Ever Tech | `available` | Engineers and operated agents for hire | https://ever.tech | https://ever.tech | https://ever.tech |
 
-Each address is the product's current public address for that environment: the web app where a product has
-one, otherwise its website. Every additional entry is a per-entry decision with a named owner, not a batch
-one.
+Each address is the product's **app** for that environment (owner, 2026-11-26: the switcher goes to the apps,
+not the websites), or its production app where that environment has none. Ever Tech has no app yet, so it
+links to its site, https://ever.tech, until https://app.ever.tech is live. The lines are the same as on the
+Ever websites (homelab `docs/brand/EVER-SITES-UNIFIED-CHROME.md` §4 and §4b); Ever Works translates them
+into its 21 languages by id. Every additional entry is a per-entry decision with a named owner, not a batch one.
 
 ## Icons
 
@@ -92,12 +97,19 @@ logo of its documentation site (`icons/ever-traduora.png`, 400 × 400). Ever Wor
 share one site icon, so their tiles look alike until either product publishes its own mark; the names tell
 them apart.
 
-## Placeholders — replace these
+## Hosts still being built
 
-One value is knowingly incomplete and marked `TBD` rather than guessed:
+No address is `TBD`. Three of them do not answer yet, on purpose (owner, 2026-11-26):
 
-1. **`ever-traduora` → `urls.develop`**: Ever Traduora has no public develop environment yet. Until it has one,
-   the launcher does not show Ever Traduora in develop.
+1. **`ever-traduora` → https://app.traduora.co** (production and stage): Ever Traduora as SaaS, being built.
+   Develop links to the live demo, https://demo.traduora.co.
+2. **`ever-demand` → https://app.everdemand.co**: the Ever Demand admin as SaaS, being built. The entry stays
+   `soon` (never a link) until that host answers.
+3. **`ever-tech`**: https://ever.tech today; switch every environment to https://app.ever.tech when the Ever
+   Tech client app is live.
+
+To point a row somewhere else in the meantime, change only its address here: the launchers pick it up on
+their next catalog read (within an hour), with no deploy.
 
 ## Validating locally
 
@@ -108,7 +120,7 @@ npm run validate
 
 The check is: the schema, unique ids, the ≤ 24-entry cap, every icon present and ≤ 16 KiB, SVG icons free of
 `<script>`, `on<event>=`, `javascript:` and `<foreignObject>`, and an `https` address per environment. It
-exits non-zero and names the failing entry. `TBD` addresses are warnings, not errors.
+exits non-zero and names the failing entry. A `TBD` address would be a warning, not an error.
 
 ## Contributing
 
