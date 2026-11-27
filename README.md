@@ -12,7 +12,7 @@ launcher without a deploy.
 > Traduora, Demand, Tech), each with its one line and official icon. Each address is the product's **app** for
 > that environment, or its production app where that environment has none (in-app switcher brief, owner
 > 2026-11-26). Ever Demand is listed as `soon`: the launcher shows it with a **Soon** chip and never as a link.
-> No address is `TBD`. Three hosts are still being built and do not answer yet; see **Hosts still being
+> No address is `TBD`. Two hosts are still being built and do not answer yet; see **Hosts still being
 > built** below.
 
 ---
@@ -82,11 +82,11 @@ missing environment is a visible error here rather than a silently absent tile.
 | 50 | `ever-rec` | Ever Rec | `available` | Screen capture and recording | https://app.rec.so | https://app.rec.so | https://app.rec.so |
 | 60 | `ever-traduora` | Ever Traduora | `available` | Translation management for teams | https://app.traduora.co | https://app.traduora.co | https://demo.traduora.co |
 | 70 | `ever-demand` | Ever Demand | `soon` | Commerce and on-demand marketplaces | https://app.everdemand.co | https://app.everdemand.co | https://app.everdemand.co |
-| 80 | `ever-tech` | Ever Tech | `available` | Engineers and operated agents for hire | https://ever.tech | https://ever.tech | https://ever.tech |
+| 80 | `ever-tech` | Ever Tech | `available` | Engineers and operated agents for hire | https://app.ever.tech | https://app-stage.ever.tech | https://app-dev.ever.tech |
 
 Each address is the product's **app** for that environment (owner, 2026-11-26: the switcher goes to the apps,
-not the websites), or its production app where that environment has none. Ever Tech has no app yet, so it
-links to its site, https://ever.tech, until https://app.ever.tech is live. The lines are the same as on the
+not the websites), or its production app where that environment has none. Ever Tech links to its client app
+(https://app.ever.tech, live in all three environments since 2026-11-27). The lines are the same as on the
 Ever websites (homelab `docs/brand/EVER-SITES-UNIFIED-CHROME.md` §4 and §4b); Ever Works translates them
 into its 21 languages by id. Every additional entry is a per-entry decision with a named owner, not a batch one.
 
@@ -99,14 +99,12 @@ them apart.
 
 ## Hosts still being built
 
-No address is `TBD`. Three of them do not answer yet, on purpose (owner, 2026-11-26):
+No address is `TBD`. Two of them do not answer yet, on purpose (owner, 2026-11-26):
 
 1. **`ever-traduora` → https://app.traduora.co** (production and stage): Ever Traduora as SaaS, being built.
    Develop links to the live demo, https://demo.traduora.co.
 2. **`ever-demand` → https://app.everdemand.co**: the Ever Demand admin as SaaS, being built. The entry stays
    `soon` (never a link) until that host answers.
-3. **`ever-tech`**: https://ever.tech today; switch every environment to https://app.ever.tech when the Ever
-   Tech client app is live.
 
 To point a row somewhere else in the meantime, change only its address here: the launchers pick it up on
 their next catalog read (within an hour), with no deploy.

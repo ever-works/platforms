@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"catalogVersion": "0.4.0",
+	"catalogVersion": "0.4.1",
 	"platforms": [
 		{
 			"id": "app-ever-co",
@@ -101,9 +101,9 @@
 			"order": 80,
 			"status": "available",
 			"urls": {
-				"production": "https://ever.tech",
-				"stage": "https://ever.tech",
-				"develop": "https://ever.tech"
+				"production": "https://app.ever.tech",
+				"stage": "https://app-stage.ever.tech",
+				"develop": "https://app-dev.ever.tech"
 			}
 		}
 	]
